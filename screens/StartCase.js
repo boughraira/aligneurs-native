@@ -42,6 +42,14 @@ const StartCase = ({ navigation: { goBack } }) => {
           activeTintColor: Colors.primary,
           inactiveTintColor: Colors.second,
           labelStyle:{fontSize:12,fontWeight:'600'},
+          labelStyle:{fontSize:15,fontFamily:'Poppins-SemiBold'},
+          style:{ backgroundColor: 'transparent',
+          
+          left: 0,
+          right: 0,
+          bottom: 0,
+          elevation: 0,},
+          scrollEnabled: true
          
         }}
       >
