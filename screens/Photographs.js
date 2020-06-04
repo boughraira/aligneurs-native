@@ -11,6 +11,8 @@ import Colors from "../constants/Colors";
 import { Icon } from "react-native-elements";
 import Card from "../UI/Card";
 import PhotographsData from "../data/PhotographsData";
+import { RFValue } from "react-native-responsive-fontsize";
+
 
 const Photographs = ({ navigation: { navigate, goBack } }) => {
   return (
@@ -69,23 +71,23 @@ const styles = StyleSheet.create({
   screen: { flex: 1 },
   header: {
     flexDirection: "row",
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(20),
     borderBottomWidth: 1,
     borderBottomColor: "#dbdbdb",
     paddingBottom: 20,
   },
   titleHeader: {
     fontSize: 22,
-    paddingHorizontal: 20,
+    paddingHorizontal: RFValue(20),
     fontFamily:'Poppins-SemiBold'
   },
   cards: {
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(20),
   },
   card: {
-    paddingHorizontal: 15,
+    paddingHorizontal: RFValue(15),
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -98,7 +100,7 @@ const styles = StyleSheet.create({
     borderRadius: 60 / 2,
   },
   cardsContainer: {
-    paddingVertical: 10,
+    paddingVertical: RFValue(10),
   },
 });
 

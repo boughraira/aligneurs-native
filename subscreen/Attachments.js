@@ -3,6 +3,9 @@ import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
 import Card from "../UI/Card";
 import Colors from "../constants/Colors";
 import { Icon } from "react-native-elements";
+import { RFValue } from "react-native-responsive-fontsize";
+
+
 
 const Attachements = ({ navigation: { navigate } }) => {
   return (
@@ -81,25 +84,27 @@ const Attachements = ({ navigation: { navigate } }) => {
 const styles = StyleSheet.create({
   attachements: {
     flexDirection: "column",
-    paddingHorizontal: 20,
-    paddingVertical: 20,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(20),
   },
   cardsContainer: {
-    paddingVertical: 10,
+    paddingVertical: RFValue(10),
   },
   cards: {
     width: 175 * 2,
     height: 75,
-    paddingHorizontal: 15,
-    paddingVertical: 20,
+    paddingHorizontal: RFValue(15),
+    paddingVertical: RFValue(20),
     flexDirection: "row",
     justifyContent: "space-between",
   },
   titleContainer: {
     flexDirection: "row",
+    justifyContent:'center',
+    alignItems:'center'
   },
   textTitle: {
-    paddingVertical: 7,
+    
     paddingHorizontal: 20,
     fontSize: 15,
     fontFamily:'Poppins-SemiBold'

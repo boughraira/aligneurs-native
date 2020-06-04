@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import Colors from '../constants/Colors'
+import { RFValue } from "react-native-responsive-fontsize";
 
 const styles = StyleSheet.create({
   screen: {
@@ -15,8 +16,8 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(30),
     borderBottomWidth: 1,
     borderBottomColor: "#dbdbdb",
     paddingBottom: 20,
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   cardView: {
-    paddingVertical: 20,
+    paddingVertical: RFValue(20),
     flexDirection: "row",
   },
   title: {
@@ -80,16 +81,16 @@ const styles = StyleSheet.create({
     fontFamily:'Poppins-SemiBold'
   },
   cardContainer: {
-    paddingRight: 20,
+    paddingRight: RFValue(20),
   },
   taches: {
-    paddingHorizontal: 20,
+    paddingHorizontal: RFValue(20),
   },
   tacheContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
-    paddingVertical: 20,
+    paddingVertical: RFValue(20),
   },
   gradient: {
     width: 170,
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    paddingVertical: 10,
+    paddingVertical: RFValue(10),
   },
   textPatient: {
     color: "white",

@@ -17,6 +17,8 @@ import Colors from "../constants/Colors";
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import LatestNotifications from "../data/LatestNotificationsData";
 import OldNotifications from '../data/OldNotificationsData'
+import { RFValue } from "react-native-responsive-fontsize";
+
 
 const Notifications = ({ navigation: { goBack } }) => {
   return (
@@ -129,8 +131,8 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: "row",
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(30),
     borderBottomWidth: 1,
     borderBottomColor: "#dbdbdb",
     paddingBottom: 20,
@@ -138,18 +140,18 @@ const styles = StyleSheet.create({
   },
   titleHeader: {
     fontSize: 22,
-    paddingHorizontal: 20,
+    paddingHorizontal: RFValue(20),
     fontFamily:'Poppins-SemiBold'
   },
   newNotif:{
-      paddingVertical:20,
-      paddingHorizontal:20
+      paddingVertical:RFValue(20),
+      paddingHorizontal:RFValue(20)
   },
   notifContainer:{
       flexDirection:'row',
       justifyContent:'space-between',
       alignItems:'center',
-      paddingVertical:20,
+      paddingVertical:RFValue(20),
      
       borderBottomWidth: 1,
       borderBottomColor: "#dbdbdb",
@@ -160,7 +162,7 @@ const styles = StyleSheet.create({
       alignItems:'center'
   },
   infoContainer:{
-      paddingHorizontal:15
+      paddingHorizontal:RFValue(15)
   },
   iconContainer:{
       width:60,
@@ -171,7 +173,7 @@ const styles = StyleSheet.create({
       alignItems:'center'
   },
   oldNotif:{
-      paddingVertical:20
+      paddingVertical:RFValue(20)
   }
 });
 

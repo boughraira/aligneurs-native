@@ -6,6 +6,8 @@ import Treatment from "../subscreen/Treatment";
 import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
 import { Icon, colors } from "react-native-elements";
 import Colors from "../constants/Colors";
+import { RFValue } from "react-native-responsive-fontsize";
+
 
 import patients from "../data/PatientsData";
 
@@ -37,7 +39,7 @@ const ProfileScreen = ({ navigation: { goBack, navigate } }) => {
             </View>
 
             <View style={styles.buttons}>
-              <View style={{ paddingHorizontal: 10 }}>
+              <View style={{ paddingHorizontal: RFValue(10) }}>
                 <TouchableOpacity onPress={() => navigate("StartCase")}>
                   <View style={styles.button}>
                     <Text style={{ color: "white" }}>Start the case</Text>
@@ -92,13 +94,13 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     paddingTop: 30,
-    paddingHorizontal: 20,
+    paddingHorizontal: RFValue(20),
   },
   subHeader: {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 50,
+    paddingHorizontal: RFValue(50),
   },
   image: {
     width: 110,

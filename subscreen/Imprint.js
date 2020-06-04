@@ -3,6 +3,8 @@ import { Text, View, StyleSheet } from "react-native";
 import Colors from "../constants/Colors";
 import Card from "../UI/Card";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { RFValue } from "react-native-responsive-fontsize";
+
 
 const Imprint = ({ navigation: { goBack } }) => {
   return (
@@ -35,8 +37,8 @@ const styles = StyleSheet.create({
   cards: {
     flexDirection: "row",
     justifyContent: "space-evenly",
-    paddingHorizontal: 10,
-    paddingVertical: 20,
+    paddingHorizontal: RFValue(10),
+    paddingVertical: RFValue(20),
   },
   card: {
     justifyContent: "center",

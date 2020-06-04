@@ -10,6 +10,8 @@ import {
   MenuOption,
   MenuTrigger,
 } from "react-native-popup-menu";
+import { RFValue } from "react-native-responsive-fontsize";
+
 
 
 
@@ -96,8 +98,8 @@ const styles = StyleSheet.create({
     
   header: {
     flexDirection: "row",
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(30),
     borderBottomWidth: 1,
     borderBottomColor: "#dbdbdb",
     paddingBottom: 20,
@@ -105,15 +107,15 @@ const styles = StyleSheet.create({
   },
   titleHeader: {
     fontSize: 22,
-    paddingHorizontal: 20,
+    paddingHorizontal: RFValue(20),
     fontFamily:'Poppins-SemiBold'
   },
   text: {
-    paddingVertical: 20,
-    paddingHorizontal: 20,
+    paddingVertical: RFValue(20),
+    paddingHorizontal: RFValue(20),
   },
   typingContainer:{
-    paddingHorizontal: 30,
+    paddingHorizontal:RFValue (30),
     alignItems: 'center',
     //paddingVertical: 120,
     flexDirection:'row',
@@ -121,7 +123,7 @@ const styles = StyleSheet.create({
     flex:1,
     position:'absolute',
     bottom:0,
-    paddingVertical:30
+    paddingVertical:RFValue(30)
   
     
   },
@@ -132,7 +134,7 @@ const styles = StyleSheet.create({
       width:230,
       height:50,
       borderRadius:5,
-      paddingHorizontal:10
+      paddingHorizontal:RFValue(10)
   }
 
 });

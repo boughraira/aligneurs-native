@@ -2,6 +2,8 @@ import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import Colors from "../constants/Colors";
 import patients from "../data/PatientsData";
+import { RFValue } from "react-native-responsive-fontsize";
+
 
 const Profile = (props) => {
   return (
@@ -41,8 +43,8 @@ const Profile = (props) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: "column",
-    paddingHorizontal: 25,
-    paddingVertical: 25,
+    paddingHorizontal: RFValue(25),
+    paddingVertical: RFValue(25),
   },
   date: {
     flexDirection: "column",
@@ -51,12 +53,12 @@ const styles = StyleSheet.create({
  
   details: {
     flexDirection: "column",
-    paddingVertical: 10,
+    paddingVertical: RFValue(10),
   },
   detail: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingVertical: 5,
+    paddingVertical: RFValue(5),
   },
   textTitle: {
     color: Colors.second,

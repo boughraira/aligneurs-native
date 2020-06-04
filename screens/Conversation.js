@@ -18,6 +18,8 @@ import Colors from "../constants/Colors";
 import { Icon } from "react-native-elements";
 import Card from "../UI/Card";
 import Conversations from "../data/ConversationData";
+import { RFValue } from "react-native-responsive-fontsize";
+
 
 const Conversation = ({ navigation: { goBack, navigate } }) => {
   return (
@@ -92,9 +94,9 @@ const Conversation = ({ navigation: { goBack, navigate } }) => {
 
         <View
           style={{
-            paddingHorizontal: 20,
+            paddingHorizontal: RFValue(20),
             alignItems: "flex-end",
-            paddingVertical: 120,
+            paddingVertical: RFValue(120),
           }}
         >
           <View style={styles.addIcon}>
@@ -114,8 +116,8 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: "row",
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(30),
     borderBottomWidth: 1,
     borderBottomColor: "#dbdbdb",
     paddingBottom: 20,
@@ -123,22 +125,22 @@ const styles = StyleSheet.create({
   },
   titleHeader: {
     fontSize: 22,
-    paddingHorizontal: 20,
+    paddingHorizontal: RFValue(20),
     fontFamily:'Poppins-SemiBold'
   },
   text: {
-    paddingVertical: 20,
-    paddingHorizontal: 20,
+    paddingVertical: RFValue(20),
+    paddingHorizontal: RFValue(20),
   },
   cardContainer: {
-    paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingVertical: RFValue(10),
+    paddingHorizontal: RFValue(20),
   },
   card: {
     width: 175 * 2,
     height: 100,
 
-    paddingHorizontal: 20,
+    paddingHorizontal: RFValue(20),
     justifyContent: "space-between",
     flexDirection: "row",
     alignItems: "center",
@@ -149,7 +151,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   nameMessage: {
-    paddingHorizontal: 15,
+    paddingHorizontal: RFValue(15),
   },
   image: {
     width: 70,

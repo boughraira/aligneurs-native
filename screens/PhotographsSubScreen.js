@@ -3,6 +3,8 @@ import { Text, View, TouchableOpacity, StyleSheet, Image } from "react-native";
 import Colors from "../constants/Colors";
 import { Icon } from "react-native-elements";
 import Card from "../UI/Card";
+import { RFValue } from "react-native-responsive-fontsize";
+
 
 const PhotographsSubScreen = ({ navigation: { goBack } }) => {
   return (
@@ -38,25 +40,25 @@ const PhotographsSubScreen = ({ navigation: { goBack } }) => {
           <View style={{ paddingBottom: 10 }}>
             <Image
               style={styles.image}
-              source={require("../android/app/src/assets/photo1.png")}
+              source={require("../Photos/photo1.png")}
             />
           </View>
           <View style={{ paddingBottom: 10 }}>
             <Image
               style={styles.image}
-              source={require("../android/app/src/assets/photo2.png")}
+              source={require("../Photos/photo2.png")}
             />
           </View>
           <View style={{ paddingBottom: 10 }}>
             <Image
               style={styles.image}
-              source={require("../android/app/src/assets/photo3.png")}
+              source={require("../Photos/photo3.png")}
             />
           </View>
           <View style={{ paddingBottom: 10 }}>
             <Image
               style={styles.image}
-              source={require("../android/app/src/assets/photo4.png")}
+              source={require("../Photos/photo4.png")}
             />
           </View>
         </View>
@@ -71,23 +73,23 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: "row",
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(30),
     borderBottomWidth: 1,
     borderBottomColor: "#dbdbdb",
     paddingBottom: 20,
   },
   titleHeader: {
     fontSize: 22,
-    paddingHorizontal: 20,
+    paddingHorizontal: RFValue(20),
     fontFamily:'Poppins-SemiBold'
   },
   cardContainer: {
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(30),
   },
   card: {
-    paddingHorizontal: 15,
+    paddingHorizontal: RFValue(15),
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -95,19 +97,19 @@ const styles = StyleSheet.create({
     height: 75,
   },
   photosContainer: {
-    paddingHorizontal: 20,
+    paddingHorizontal: RFValue(20),
   },
   photos: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: 20,
+    paddingVertical: RFValue(20),
   },
   image: {
     width: 170,
     height: 170,
-    paddingVertical: 10,
+    paddingVertical: RFValue(10),
   },
 });
 

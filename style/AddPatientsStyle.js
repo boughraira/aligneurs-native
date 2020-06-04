@@ -1,19 +1,21 @@
 import { StyleSheet } from "react-native";
 import Colors from "../constants/Colors";
+import { RFValue } from "react-native-responsive-fontsize";
+
 
 const styles = StyleSheet.create({
   screen: { flex: 1 },
   header: {
     flexDirection: "row",
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(30),
     borderBottomWidth: 1,
     borderBottomColor: "#dbdbdb",
     paddingBottom: 20,
   },
   titleHeader: {
     fontSize: 22,
-    paddingHorizontal: 20,
+    paddingHorizontal: RFValue(20),
     fontFamily:'Poppins-SemiBold'
    
   },
@@ -21,7 +23,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    paddingVertical: 20,
+    paddingVertical: RFValue(20),
   },
   circleCard: {
     width: 100,
@@ -47,17 +49,17 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     fontSize: 15,
-    paddingHorizontal: 10,
+    paddingHorizontal: RFValue(10),
     fontFamily:'Poppins-SemiBold'
   },
   cards: {
-    paddingVertical: 15,
-    paddingHorizontal: 20,
+    paddingVertical:RFValue (15),
+    paddingHorizontal: RFValue(20),
     height: 70,
     width: 175 * 2,
   },
   cardsContainer: {
-    paddingVertical: 10,
+    paddingVertical:RFValue (10),
   },
   button: {
     justifyContent: "center",
@@ -78,7 +80,7 @@ const styles = StyleSheet.create({
   inputsButtons: {
     flexDirection: "column",
     //paddingVertical:10,
-    paddingHorizontal: 20,
+    paddingHorizontal: RFValue(20),
   },
 });
 

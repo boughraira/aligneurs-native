@@ -2,6 +2,8 @@ import React from "react";
 import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
 import Colors from "../constants/Colors";
 import { Icon } from "react-native-elements";
+import { RFValue } from "react-native-responsive-fontsize";
+
 
 const PhotographsSub = ({ navigation: { navigate, goBack } }) => {
   return (
@@ -47,15 +49,15 @@ const styles = StyleSheet.create({
   screen: { flex: 1 },
   header: {
     flexDirection: "row",
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(30),
     borderBottomWidth: 1,
     borderBottomColor: "#dbdbdb",
     paddingBottom: 20,
   },
   titleHeader: {
     fontSize: 22,
-    paddingHorizontal: 20,
+    paddingHorizontal: RFValue(20),
     fontFamily:'Poppins-SemiBold'
   },
   uploadButton: {
@@ -86,7 +88,7 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     fontSize: 15,
-    paddingHorizontal: 10,
+    paddingHorizontal: RFValue(10),
     fontFamily:'Poppins-SemiBold'
   },
   titleContainer: {

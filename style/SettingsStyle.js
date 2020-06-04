@@ -1,5 +1,7 @@
 import { StyleSheet } from "react-native";
 import Colors from "../constants/Colors";
+import { RFValue } from "react-native-responsive-fontsize";
+
 
 const styles = StyleSheet.create({
   screen: {
@@ -12,15 +14,15 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(30),
     borderBottomWidth: 1,
     borderBottomColor: "#dbdbdb",
     paddingBottom: 20,
   },
   textHeader: {
     fontSize: 23,
-    paddingVertical: 10,
+    paddingVertical: RFValue(10),
     fontWeight: "100",
     fontFamily:'Poppins-SemiBold'
   },
@@ -57,8 +59,8 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   userDetails: {
-    paddingHorizontal: 20,
-    paddingVertical: 20,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(10),
   },
   headerContainer: {
     flexDirection: "column",
@@ -78,9 +80,10 @@ const styles = StyleSheet.create({
   password: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingTop: 15,
+    paddingVertical:RFValue(10),
     borderTopWidth: 1,
     borderTopColor: "#dbdbdb",
+   
   },
   passwordContainer: {
     flexDirection: "row",
@@ -88,7 +91,7 @@ const styles = StyleSheet.create({
   },
   textPassword: {
     fontSize: 18,
-    paddingHorizontal: 30,
+    paddingHorizontal: RFValue(30),
   },
 });
 export default styles;

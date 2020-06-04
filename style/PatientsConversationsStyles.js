@@ -1,5 +1,7 @@
 import { StyleSheet } from "react-native";
 import Colors from "../constants/Colors";
+import { RFValue } from "react-native-responsive-fontsize";
+
 
 const styles = StyleSheet.create({
   screen: {
@@ -65,14 +67,14 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: "row",
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(30),
   
     paddingBottom: 20,
   },
   textHeader: {
     fontSize: 22,
-    paddingHorizontal: 20,
+    paddingHorizontal: RFValue(20),
     fontFamily:'Poppins-SemiBold'
    
   },
@@ -91,22 +93,22 @@ const styles = StyleSheet.create({
     color: "white",
   },
   inputContainer: {
-    paddingHorizontal: 10,
+    paddingHorizontal: RFValue(10),
     justifyContent: "center",
     flexDirection: "row",
     alignItems: "center",
     borderColor: Colors.second,
     borderWidth: 0.2,
     width: "90%",
-    marginHorizontal: 20,
+    marginHorizontal: RFValue(20),
   },
   input: {
     flex: 4,
   },
 
   titles: {
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(30),
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -114,14 +116,14 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   cardsContainer: {
-    paddingHorizontal: 20,
-    paddingVertical: 10,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(10),
   },
   cards: {
     width: 175 * 2,
     height:120,
 
-    paddingHorizontal: 20,
+    paddingHorizontal: RFValue(20),
     justifyContent: "center",
     flexDirection: "column",
   },
@@ -144,7 +146,7 @@ const styles = StyleSheet.create({
     fontFamily:'Poppins-SemiBold'
   },
   search: {
-    padding: 10,
+    padding: RFValue(10),
   },
 });
 

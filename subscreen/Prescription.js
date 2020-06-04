@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Text, View, StyleSheet } from "react-native";
 import CheckBox from '@react-native-community/checkbox';
+import { RFValue } from "react-native-responsive-fontsize";
+
 
 const Prescription = ({ navigation: { goBack } }) => {
   const [isSelected, setSelection] = useState(false);
@@ -124,8 +126,8 @@ const Prescription = ({ navigation: { goBack } }) => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    paddingHorizontal: 20,
-    paddingVertical: 20,
+    paddingHorizontal: RFValue(20),
+    paddingVertical: RFValue(20),
   },
   instru1: {
     paddingBottom: 20,
@@ -139,7 +141,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   instru2:{
-    paddingVertical:10
+    paddingVertical:RFValue(10)
   },
   checkboxs:{
     flexDirection:'column',

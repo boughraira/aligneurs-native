@@ -14,8 +14,7 @@ import {
 
 import Input from "../UI/Input";
 import Colors from "../constants/Colors";
-import { colors } from "react-native-elements";
-
+import {  RFValue } from "react-native-responsive-fontsize";
 const FORM_INPUT_UPDATE = "FORM_INPUT_UPDATE";
 
 const formReducer = (state, action) => {
@@ -77,7 +76,7 @@ const LoginScreen = ({ navigation: { navigate } }) => {
             <View style={styles.intro}>
               <Image
                 style={styles.image}
-                source={require("../android/app/src/assets/logo.png")}
+                source={require("../Photos/logo.png")}
               />
               <Text style={styles.title}>Aligneurs Français</Text>
               <Text style={styles.subTitle}>
@@ -144,15 +143,15 @@ const styles = StyleSheet.create({
   authScreen: {
     width: "90%",
     maxWidth: 400,
-    padding: 20,
+    padding: RFValue(20),
     maxHeight: 400,
-    paddingTop: 150,
+    paddingTop: RFValue(150),
   },
   buttonContainer: {
     height: 60,
     width: "80%",
     backgroundColor: Colors.primary,
-    padding: 20,
+    padding: RFValue(20),
   },
   textButton: {
     color: "white",
@@ -164,7 +163,7 @@ const styles = StyleSheet.create({
   },
 
   suggestion: {
-    marginVertical: 30,
+    marginVertical: RFValue(30),
     flexDirection: "row",
     justifyContent: "space-between",
   },
@@ -175,7 +174,7 @@ const styles = StyleSheet.create({
   },
   intro: {
     flex: 1,
-    paddingVertical: 20,
+    paddingVertical: RFValue(20),
     marginTop: 20,
   },
   image: {
@@ -186,7 +185,7 @@ const styles = StyleSheet.create({
   title: {
     color: Colors.primary,
     fontSize: 35,
-    paddingTop: 30,
+    paddingTop: RFValue(30),
     fontFamily:'Poppins-Bold'
   },
   subTitle: {
