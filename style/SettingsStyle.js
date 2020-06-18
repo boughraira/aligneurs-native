@@ -70,28 +70,39 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   textStyling: {
-    fontSize: 14,
-    color: Colors.second,
+    fontSize: 15,
+    color:'#7a7a7a',
     paddingBottom: 5,
+    fontFamily:'Poppins-Medium',
+    fontWeight:'600'
   },
   info: {
     fontSize: 17,
+    color:'#232323',
+    fontFamily:'Poppins-Medium',
+    fontWeight:'700'
   },
   password: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingVertical:RFValue(10),
+    paddingVertical:RFValue(20),
     borderTopWidth: 1,
     borderTopColor: "#dbdbdb",
-   
+    borderBottomWidth: 1,
+    borderBottomColor: "#dbdbdb",
   },
   passwordContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
+   // paddingVertical:RFValue(10)
   },
   textPassword: {
-    fontSize: 18,
-    paddingHorizontal: RFValue(30),
+   
+    paddingHorizontal: RFValue(20),
+    fontSize: 17,
+    color:'#232323',
+    fontFamily:'Poppins-Medium',
+    fontWeight:'700'
   },
 });
 export default styles;

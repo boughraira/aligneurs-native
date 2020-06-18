@@ -91,8 +91,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    width: 175 * 2,
+    width: "95%",
     height: 90,
+    alignSelf:"center",
   },
   image: {
     width: 60,

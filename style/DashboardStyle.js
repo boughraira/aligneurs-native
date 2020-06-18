@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     width:40,
     height:40,
     borderRadius:40/2,
+    alignItems:'center',
   
     backgroundColor:'white',
     justifyContent:'center',
@@ -61,19 +62,44 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   liens: {
-    padding: 20,
+    paddingLeft:RFValue(20),
+    paddingTop:RFValue(20),
   },
   cards: {
     paddingHorizontal: 20,
     alignItems: "center",
     flexDirection: "row",
+    width:251,height:80,
+    justifyContent:'center'
   },
   cardView: {
     paddingVertical: RFValue(20),
     flexDirection: "row",
   },
+  modalView:{
+    //alignSelf: 'center',
+    //alignItems: 'center',
+    //justifyContent: 'center',
+    backgroundColor: "white",
+    borderRadius: 6,
+    paddingVertical: 20,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    width: "100%",
+    height: '30%',
+
+
+  },
   title: {
-    fontSize: 15,
+    fontSize: 16,
+    fontFamily:'Poppins-Medium',
+    fontWeight:'500'
+
   },
   action: {
     fontSize: 17,
@@ -85,28 +111,31 @@ const styles = StyleSheet.create({
   },
   taches: {
     paddingHorizontal: RFValue(20),
-  },
-  tacheContainer: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    paddingVertical: RFValue(20),
-  },
-  gradient: {
-    width: 170,
-    height: 160,
-    borderRadius: 8,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
-    paddingVertical: RFValue(10),
-  },
-  textPatient: {
-    color: "white",
-    fontSize: 20,
-    fontWeight: "normal",
+
     
   },
+  tacheContainer: {
+   
+    paddingVertical:RFValue(20),
+   
+   
+
+  },
+  gradient: {
+    width: 150,
+    height: 136,
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: "center",
+    flexDirection: "column",
+    paddingVertical: RFValue(20),
+    marginTop: 10,
+    marginBottom:10,
+    marginRight:20,
+   
+
+  },
+ 
   number: {
     color: "white",
     fontSize: 50,

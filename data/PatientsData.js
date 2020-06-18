@@ -1,15 +1,10 @@
-var options = {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
-  const today = new Date();
+const moment = require('moment');
+
   
   const patients = [
     {
       id: 1459,
-      date: today.toLocaleDateString("en-US", options),
+      date: moment().format("DD MMM YYYY"),
       name: "Hazem Boughraira",
       add:'Case started',
       phone:'93 508 154',
@@ -18,7 +13,7 @@ var options = {
     },
     {
       id: 1459,
-      date: today.toLocaleDateString("en-US", options),
+      date: moment().format("DD MMM YYYY"),
       name: "Hazem Boughraira",
       add:'Newly added',
       phone:'93 508 154',
@@ -27,7 +22,7 @@ var options = {
     },
     {
       id: 1459,
-      date: today.toLocaleDateString("en-US", options),
+      date: moment().format("DD MMM YYYY"),
       name: "Hazem Boughraira",
       add:'Newly added',
       phone:'93 508 154',
@@ -36,7 +31,7 @@ var options = {
     },
     {
       id: 1459,
-      date: today.toLocaleDateString("en-US", options),
+      date: moment().format("DD MMM YYYY"),
       name: "Hazem Boughraira",
       add:'Newly added',
       phone:'93 508 154',
@@ -44,7 +39,7 @@ var options = {
     },
     {
       id: 1459,
-      date: today.toLocaleDateString("en-US", options),
+      date: moment().format("DD MMM YYYY"),
       name: "Hazem Boughraira",
       add:'Newly added',
       phone:'93 508 154',
@@ -54,7 +49,7 @@ var options = {
     
     {
       id: 1459,
-      date: today.toLocaleDateString("en-US", options),
+      date: moment().format("DD MMM YYYY"),
       name: "Hazem Boughraira",
       add:'Newly added',
       phone:'93 508 154',

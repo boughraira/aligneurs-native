@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Text,
   View,
@@ -6,9 +6,9 @@ import {
   TouchableOpacity,
   FlatList,
   Image,
+  Alert,
 } from "react-native";
 import {
-  MenuContext,
   Menu,
   MenuOptions,
   MenuOption,
@@ -20,8 +20,31 @@ import Card from "../UI/Card";
 import Conversations from "../data/ConversationData";
 import { RFValue } from "react-native-responsive-fontsize";
 
-
 const Conversation = ({ navigation: { goBack, navigate } }) => {
+  const [renderData, setRenderData] = useState(Conversations);
+  const [selectionData, setSelectionData] = useState([]);
+
+  const onPressHandler = (id) => {
+    let Data = [...renderData];
+    for (let data of renderData) {
+      if (data.id == id) {
+        data.selected = data.selected == null ? true : !data.selected;
+        break;
+      }
+    }
+    setRenderData(Data);
+  };
+
+  const getSelectedItem = () => {
+    let Data = [...renderData];
+    for (i of Data) {
+      if (i.selected == true) {
+        selectionData.push(i.id);
+      }
+    }
+    setSelectionData(selectionData);
+  };
+
   return (
     <View style={styles.screen}>
       <View style={styles.header}>
@@ -49,16 +72,32 @@ const Conversation = ({ navigation: { goBack, navigate } }) => {
               />
             </MenuTrigger>
 
-            <MenuOptions style={{height:70,alignItems:'center' ,justifyContent:'center'}}>
-              <MenuOption onSelect={() => alert(`Delete`)} >
-                <Text style={{ color: "red" ,fontSize:18}}>Delete conversation</Text>
+            <MenuOptions
+              style={{
+                height: 70,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <MenuOption onSelect={() => alert(`Delete`)}>
+                <Text style={{ color: "red", fontSize: 18 }}>
+                  Delete conversation
+                </Text>
               </MenuOption>
             </MenuOptions>
           </Menu>
         </View>
       </View>
       <View style={styles.text}>
-        <Text style={{ color: "#555555", fontSize: 15, lineHeight: 22 }}>
+        <Text
+          style={{
+            color: "#575757",
+            fontSize: 15,
+            lineHeight: 22,
+            fontFamily: "Poppins-Medium",
+            fontWeight: "600",
+          }}
+        >
           Here are the previous conversation with lab assist.{"\n"}
           regarding patients
         </Text>
@@ -68,46 +107,122 @@ const Conversation = ({ navigation: { goBack, navigate } }) => {
           data={Conversations}
           renderItem={({ item }) => (
             <View style={styles.cardContainer}>
-              <TouchableOpacity onPress={() => navigate("Chat")}>
+              <TouchableOpacity
+                onPress={() => navigate("Chat")}
+                activeOpacity={0.8}
+              >
                 <Card style={styles.card}>
                   <View style={styles.containerInfo}>
-                    <Image source={item.image} style={styles.image} />
+                    <TouchableOpacity
+                      onPress={() => onPressHandler(item.id)}
+                    >
+                      {item.selected == true ? (
+                        <View
+                          style={{
+                            width: 70,
+                            height: 70,
+                            borderRadius: 70 / 2,
+                            backgroundColor: "#ff3030",
+                            justifyContent: "center",
+                            alignItems: "center",
+                          }}
+                        >
+                          <Icon
+                            name="check"
+                            type="material"
+                            color="white"
+                            size={40}
+                          />
+                        </View>
+                      ) : (
+                        <Image source={item.image} style={styles.image} />
+                      )}
+                    </TouchableOpacity>
 
                     <View style={styles.nameMessage}>
-                      <Text style={{ fontSize: 15,  fontFamily:'Poppins-SemiBold'}}>
+                      <Text
+                        style={{ fontSize: 15, fontFamily: "Poppins-SemiBold" }}
+                      >
                         {item.name}
                       </Text>
-                      <Text style={{ fontSize: 15, color: Colors.second }}>
+                      <Text
+                        style={{
+                          fontSize: 15,
+                          color: Colors.second,
+                          fontFamily: "Poppins-Medium",
+                        }}
+                      >
                         {item.message}
                       </Text>
                     </View>
                   </View>
-                  <View style={styles.badgeStyle}>
-                    <Text style={styles.badgeText}>{item.number}</Text>
-                  </View>
+                  {item.selected == true ? (
+                    <View
+                      style={{
+                        width: 40,
+                        height: 40,
+                        borderRadius: 100 / 2,
+                        backgroundColor: "#ff3030",
+                        justifyContent: "center",
+                        alignItems: "center",
+                      }}
+                    >
+                      <TouchableOpacity
+                        onPress={() =>
+                          Alert.alert("Delete", "Are you sure?", [
+                            { text: "Yes",onPress:()=>item.selected=null },
+                            { text: "No" },
+                          ])
+                        }
+                      >
+                        <Icon
+                          name="clear"
+                          type="material"
+                          color="white"
+                          size={30}
+                        />
+                      </TouchableOpacity>
+                    </View>
+                  ) : (
+                    <View style={styles.badgeStyle}>
+                      <Text style={styles.badgeText}>{item.number}</Text>
+                    </View>
+                  )}
                 </Card>
               </TouchableOpacity>
             </View>
           )}
-          keyExtractor={(item) => item.name}
+          keyExtractor={(item) => item.id}
         />
 
         <View
           style={{
-            paddingHorizontal: RFValue(20),
+            right: RFValue(20),
             alignItems: "flex-end",
-            paddingVertical: RFValue(120),
+            top: RFValue(75),
           }}
         >
-          <View style={styles.addIcon}>
-            <TouchableOpacity onPress={() => navigate("PatientsConversations")}>
-              <Icon name="add" type="material" color="white" size={60} />
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity
+            onPress={() => navigate("PatientsConversations")}
+            style={[styles.addIcon, shadow]}
+          >
+            <Icon name="add" type="material" color="white" size={60} />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
   );
+};
+
+const shadow = {
+  shadowColor: Colors.primary,
+  shadowRadius: 10,
+  shadowOpacity: 0.6,
+  elevation: 8,
+  shadowOffset: {
+    width: 0,
+    height: 4,
+  },
 };
 
 const styles = StyleSheet.create({
@@ -126,8 +241,9 @@ const styles = StyleSheet.create({
   titleHeader: {
     fontSize: 22,
     paddingHorizontal: RFValue(20),
-    fontFamily:'Poppins-SemiBold'
+    fontFamily: "Poppins-SemiBold",
   },
+
   text: {
     paddingVertical: RFValue(20),
     paddingHorizontal: RFValue(20),
@@ -137,13 +253,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: RFValue(20),
   },
   card: {
-    width: 175 * 2,
+    width: "100%",
     height: 100,
 
     paddingHorizontal: RFValue(20),
     justifyContent: "space-between",
     flexDirection: "row",
     alignItems: "center",
+    alignSelf: "center",
   },
   containerInfo: {
     flexDirection: "row",
@@ -170,24 +287,15 @@ const styles = StyleSheet.create({
     color: "white",
   },
   addIcon: {
-    width: 90,
-    height: 90,
-    borderRadius: 90 / 2,
+    width: 88,
+    height: 88,
+    borderRadius: 88 / 2,
     backgroundColor: Colors.primary,
     justifyContent: "center",
     alignItems: "center",
-    shadowColor: Colors.primary,
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
 
-    shadowOpacity: 0.2,
-    shadowRadius: 4.65,
-
-    elevation: 10,
     zIndex: 1,
-    // position: "absolute",
+    position: "absolute",
   },
 });
 

@@ -1,40 +1,35 @@
-var options = {
-  weekday: "short",
-  year: "numeric",
-  month: "short",
-  day: "numeric",
-};
-const today = new Date();
+const moment = require('moment');
+
 
 const orders = [
   {
     id: 1459,
-    date: today.toLocaleDateString("en-US", options),
+    date: moment().format("DD MMM YYYY"),
     name: "Hazem Boughraira",
   },
   {
     id: 1459,
-    date: today.toLocaleDateString("en-US", options),
+    date: moment().format("DD MMM YYYY"),
     name: "Hazem Boughraira",
   },
   {
     id: 1459,
-    date: today.toLocaleDateString("en-US", options),
+    date: moment().format("DD MMM YYYY"),
     name: "Hazem Boughraira",
   },
   {
     id: 1459,
-    date: today.toLocaleDateString("en-US", options),
+    date: moment().format("DD MMM YYYY"),
     name: "Hazem Boughraira",
   },
   {
     id: 1459,
-    date: today.toLocaleDateString("en-US", options),
+    date: moment().format("DD MMM YYYY"),
     name: "Hazem Boughraira",
   },
   {
     id: 1459,
-    date: today.toLocaleDateString("en-US", options),
+    date: moment().format("DD MMM YYYY"),
     name: "Hazem Boughraira",
   },
 ];

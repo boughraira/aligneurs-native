@@ -22,27 +22,41 @@ const styles = StyleSheet.create({
   inputsButtons: {
     flexDirection: "column",
     paddingVertical: RFValue(20),
-    paddingHorizontal: RFValue(20),
+    //paddingHorizontal: RFValue(0),
   },
   cards: {
-    paddingVertical: RFValue(20),
+    paddingVertical: RFValue(10),
     paddingHorizontal: RFValue(20),
-    height: 80,
-    width: 175 * 2,
+    height: 65,
+  
+    width: 315,
+    alignSelf:"center",
+    justifyContent:'center',
+   // alignItems:'center'
   },
   cardsContainer: {
     paddingVertical: RFValue(10),
+   
   },
   button: {
     justifyContent: "center",
     alignItems: "center",
-    height: 80,
-    width: 175 * 2,
+    height: 65,
+    width: 315,
     backgroundColor: Colors.primary,
+    alignSelf:"center",
+    shadowColor: Colors.primary,
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity:  0.4,
+    shadowRadius: 4,
+    elevation: 20,
+
   },
   textButton: {
     color: "white",
-    fontSize: 17,
+    fontSize: 16,
+    fontFamily:'Poppins-SemiBold',
+    fontWeight:'600'
   },
 });
 

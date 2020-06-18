@@ -63,9 +63,14 @@ const styles = StyleSheet.create({
   textTitle: {
     color: Colors.second,
     fontSize: 15,
+    fontWeight:'500',
+    fontFamily:'Poppins-Medium'
   },
   title: {
     fontSize: 17,
+    fontFamily:'Poppins-Medium',
+    fontWeight:'700',
+    color:'#232323'
   },
 });
 

@@ -93,8 +93,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    width: 175 * 2,
+    width: "95%",
     height: 75,
+    alignSelf:"center",
   },
   photosContainer: {
     paddingHorizontal: RFValue(20),

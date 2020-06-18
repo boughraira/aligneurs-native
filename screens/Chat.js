@@ -69,24 +69,24 @@ const Chat = ({ navigation: { goBack } }) => {
             initialValue=""
           />
         </View>
-        <View style={{flexDirection:'row',paddingHorizontal:20,}}>
-            <View style={{paddingHorizontal:10}}>
+        <View style={{flexDirection:'row',paddingHorizontal:20,paddingVertical:7}}>
+            <TouchableOpacity style={{paddingHorizontal:20}}>
                    <Icon
             name="paperclip"
             type="font-awesome"
             color={Colors.primary}
             size={30}
           />
-            </View>
+            </TouchableOpacity>
             
-            <View style={{paddingHorizontal:20}}>
+            <TouchableOpacity style={{paddingHorizontal:20}}>
         <Icon
             name="send"
             type="MaterialCommunityIcons"
             color="#555555"
             size={30}
           />
-          </View>
+          </TouchableOpacity>
         </View>
      
       </View>
@@ -115,15 +115,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: RFValue(20),
   },
   typingContainer:{
-    paddingHorizontal:RFValue (30),
-    alignItems: 'center',
+    paddingHorizontal:RFValue (10),
+    //alignItems: 'center',
     //paddingVertical: 120,
     flexDirection:'row',
-    justifyContent:'center',
+    //justifyContent:'center',
     flex:1,
     position:'absolute',
     bottom:0,
-    paddingVertical:RFValue(30)
+    paddingVertical:RFValue(30),
+    //alignSelf:"center",
   
     
   },

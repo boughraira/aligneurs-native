@@ -7,8 +7,7 @@ import {
   FlatList,
   KeyboardAvoidingView,
   Platform,
-  TouchableWithoutFeedback,
-  Keyboard,
+  Image,
   TouchableOpacity,
 } from "react-native";
 import { Icon } from "react-native-elements";
@@ -29,11 +28,25 @@ const Patients = ({ navigation: { navigate } }) => {
           <Text style={styles.textHeader}>Patients</Text>
           <View style={styles.icons}>
             <View style={{ paddingHorizontal: 15 }}>
-            <TouchableOpacity onPress={() => navigate("Notifications")}>
+              <TouchableOpacity onPress={() => navigate("Notifications")}>
+                <View style={styles.iconView}>
+                  <Icon
+                    name="notifications"
+                    type="ionicons"
+                    reverseColor={Colors.second}
+                    size={20}
+                  />
+                  <View style={styles.badgeStyle}>
+                    <Text style={styles.badgeText}>2</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            </View>
+            <TouchableOpacity onPress={() => navigate("Conversation")}>
               <View style={styles.iconView}>
                 <Icon
-                  name="notifications"
-                  type="ionicons"
+                  name="comment"
+                  type="font-awesome"
                   reverseColor={Colors.second}
                   size={20}
                 />
@@ -41,24 +54,7 @@ const Patients = ({ navigation: { navigate } }) => {
                   <Text style={styles.badgeText}>2</Text>
                 </View>
               </View>
-              </TouchableOpacity>
-            </View>
-            <TouchableOpacity onPress={() => navigate("Conversation")}>
-                 <View style={styles.iconView}>
-              <Icon
-                name="comment"
-                type="font-awesome"
-                reverseColor={Colors.second}
-                size={20}
-              />
-              <View style={styles.badgeStyle}>
-                <Text style={styles.badgeText}>2</Text>
-              </View>
-            </View>
             </TouchableOpacity>
-
-         
-
           </View>
         </View>
         <View style={styles.inputStyle}>
@@ -100,12 +96,36 @@ const Patients = ({ navigation: { navigate } }) => {
                     </View>
                     <View style={styles.footerCard}>
                       <Text style={styles.textName}>{item.name}</Text>
-                      <Icon
-                        name="chevron-right"
-                        type="font-awesome5"
-                        reverseColor={Colors.second}
-                        size={30}
-                      />
+
+                      <View
+                        style={{
+                          flexDirection: "row",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                        }}
+                      >
+                        <View
+                          style={{
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            paddingHorizontal: 15,
+                          }}
+                        >
+                          <View style={{paddingHorizontal:5}}>
+                             <Image source={require("../Photos/3d.png")} />
+                          </View>
+                         
+                          <Image source={require("../Photos/truck.png")} />
+                        </View>
+
+                        <Icon
+                          name="chevron-right"
+                          type="font-awesome5"
+                          reverseColor={Colors.second}
+                          size={30}
+                        />
+                      </View>
                     </View>
                     <Text style={styles.footerText}>{item.add}</Text>
                   </Card>

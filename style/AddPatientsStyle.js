@@ -48,15 +48,17 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   textStyle: {
-    fontSize: 15,
+    fontSize: 16,
     paddingHorizontal: RFValue(10),
-    fontFamily:'Poppins-SemiBold'
+    fontFamily:'Poppins-SemiBold',
+    fontWeight:'600'
   },
   cards: {
-    paddingVertical:RFValue (15),
+    paddingVertical:RFValue (10),
     paddingHorizontal: RFValue(20),
     height: 70,
-    width: 175 * 2,
+    width: "100%",
+    alignSelf:"center",
   },
   cardsContainer: {
     paddingVertical:RFValue (10),
@@ -67,6 +69,7 @@ const styles = StyleSheet.create({
     height: 70,
     width: 175 * 2,
     backgroundColor: Colors.primary,
+    alignSelf:"center",
   },
   textButton: {
     color: "white",
@@ -75,12 +78,14 @@ const styles = StyleSheet.create({
   buttonRadio: {
     paddingVertical: 10,
     flexDirection:'row',
-    alignItems:'center'
+    alignItems:'center',
+    
   },
   inputsButtons: {
     flexDirection: "column",
     //paddingVertical:10,
     paddingHorizontal: RFValue(20),
+    alignSelf:"center",
   },
 });
 

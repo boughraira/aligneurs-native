@@ -115,8 +115,8 @@ const styles = StyleSheet.create({
     paddingVertical: RFValue(10),
   },
   cards: {
-    width: 175 * 2,
-
+    width: "95%",
+    alignSelf:"center",
     paddingHorizontal: 20,
     justifyContent: "center",
     flexDirection: "column",
@@ -132,7 +132,8 @@ const styles = StyleSheet.create({
   },
   footerCard: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent:'space-between',
+    alignItems:'center'
   },
   textName: {
     fontSize: 15,

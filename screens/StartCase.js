@@ -16,46 +16,84 @@ const StartCase = ({ navigation: { goBack } }) => {
     <View style={{ flex: 1 }}>
       <View style={styles.header}>
         <TouchableOpacity onPress={() => goBack()}>
-        <Icon
-              name="arrow-back"
-              type="material"
-              reverseColor={Colors.second}
-              size={30}
-            />
+          <Icon
+            name="arrow-back"
+            type="material"
+            reverseColor={Colors.second}
+            size={30}
+          />
         </TouchableOpacity>
 
         <Text style={styles.titleHeader}>Start a case</Text>
       </View>
       <View style={styles.profile}>
         <View style={styles.info}>
-          <Text style={styles.nameStyle}>{patients[0].name}</Text>
-          <Text style={{ color: Colors.second, paddingTop: 5 }}>
-            ID #{patients[0].id}
+          <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
+            <Text style={styles.nameStyle}>{patients[0].name}</Text>
+            <Text
+              style={{
+                color: "#575757",
+                fontFamily: "Poppins-Medium",
+                fontSize: 13,
+                fontWeight: "600",
+              }}
+            >
+              added on {patients[0].date}
+            </Text>
+          </View>
+          <Text
+            style={{
+              color: "#575757",
+              paddingTop: 5,
+              fontFamily: "Poppins",
+              textTransform: "uppercase",
+              fontSize: 14,
+            }}
+          >
+            id #{patients[0].id}
           </Text>
         </View>
-        <Text style={{ color: Colors.second }}>
-          added on {patients[0].date}
-        </Text>
       </View>
       <Tab.Navigator
         tabBarOptions={{
+          indicatorStyle: { borderColor: Colors.primary, borderBottomWidth: 2 },
           activeTintColor: Colors.primary,
-          inactiveTintColor: Colors.second,
-          labelStyle:{fontSize:12,fontWeight:'600'},
-          labelStyle:{fontSize:15,fontFamily:'Poppins-SemiBold'},
-          style:{ backgroundColor: 'transparent',
-          
-          left: 0,
-          right: 0,
-          bottom: 0,
-          elevation: 0,},
-          scrollEnabled: true
-         
+          inactiveTintColor: "#d2d2d2",
+
+          labelStyle: {
+            fontSize: 16,
+            fontFamily: "Poppins-Medium",
+            fontWeight: "700",
+            textTransform: "capitalize",
+          },
+          style: {
+            backgroundColor: "transparent",
+
+            left: 0,
+            right: 0,
+            bottom: 0,
+            elevation: 0,
+            borderBottomWidth: 1,
+            borderBottomColor: "#dbdbdb",
+          },
+          scrollEnabled: true,
         }}
       >
-        <Tab.Screen name="Prescription" component={Prescription} />
-        <Tab.Screen name="Type of imprint" component={Imprint} />
-        <Tab.Screen name="Shipping from" component={Shipping} />
+        <Tab.Screen
+          name="Prescription"
+          component={Prescription}
+          options={{ tabBarLabel: "Prescription" }}
+        />
+        <Tab.Screen
+          name="Type of imprint"
+          component={Imprint}
+          options={{ tabBarLabel: "Type of imprint" }}
+        />
+        <Tab.Screen
+          name="Shipping from"
+          component={Shipping}
+          options={{ tabBarLabel: "Shipping from" }}
+        />
       </Tab.Navigator>
     </View>
   );
@@ -70,20 +108,21 @@ const styles = StyleSheet.create({
   titleHeader: {
     fontSize: 22,
     paddingHorizontal: 20,
-    fontFamily:'Poppins-SemiBold'
+    fontFamily: "Poppins-SemiBold",
   },
   profile: {
-    flexDirection: "row",
+    flexDirection: 'column',
     paddingHorizontal: 20,
-    justifyContent: "space-between",
+   
+    //alignItems: "center",
     borderBottomWidth: 1,
     borderBottomColor: "#dbdbdb",
     paddingBottom: 20,
   },
   nameStyle: {
     fontSize: 17,
-    
-    fontFamily:'Poppins-SemiBold'
+    fontWeight: "600",
+    fontFamily: "Poppins-SemiBold",
   },
 });
 

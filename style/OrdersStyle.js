@@ -92,10 +92,11 @@ const styles = StyleSheet.create({
     paddingVertical:RFValue (10),
   },
   cards: {
-    width: 175 * 2,
+    width:"95%",
     paddingHorizontal: RFValue(20),
     justifyContent: "center",
     flexDirection: "column",
+    alignSelf:"center",
   },
   textStyle: {
     color: Colors.second,

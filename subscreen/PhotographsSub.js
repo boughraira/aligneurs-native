@@ -22,7 +22,7 @@ const PhotographsSub = ({ navigation: { navigate, goBack } }) => {
       </View>
       <View style={styles.uploadButton}>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={() => navigate("PhotographsSubScreen")}>
+          <TouchableOpacity onPress={() => navigate("PhotographsSubScreen")} activeOpacity={0.8}>
             <View style={styles.button}>
               <Image
                 source={require("../Photos/face4.png")}

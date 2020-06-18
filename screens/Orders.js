@@ -16,25 +16,7 @@ import Colors from "../constants/Colors";
 import orders from "../data/OrdersData";
 import Card from "../UI/Card";
 
-const OrdersCards = ({ item }) => (
-  <View style={styles.cardsContainer}>
-    <Card style={styles.cards}>
-      <View style={styles.cardHeader}>
-        <Text style={styles.textStyle}>ID #{item.id}</Text>
-        <Text style={styles.textStyle}>finished on {item.date}</Text>
-      </View>
-      <View style={styles.footerCard}>
-        <Text style={styles.textName}>{item.name}</Text>
-        <Icon
-          name="chevron-right"
-          type="font-awesome5"
-          reverseColor={Colors.second}
-          size={30}
-        />
-      </View>
-    </Card>
-  </View>
-);
+
 
 const Orders = ({ navigation: { navigate } })  => {
   const [selectedValue, setSelectedValue] = useState("Recently Finished");
@@ -95,7 +77,31 @@ const Orders = ({ navigation: { navigate } })  => {
           <View style={styles.orders}>
             <FlatList
               data={orders}
-              renderItem={OrdersCards}
+              renderItem={({ item }) => (
+
+  
+                <View style={styles.cardsContainer}>
+                    <TouchableOpacity onPress={() => navigate("ProfileScreen")}>
+
+                          <Card style={styles.cards}>
+                    <View style={styles.cardHeader}>
+                      <Text style={styles.textStyle}>ID #{item.id}</Text>
+                      <Text style={styles.textStyle}>finished on {item.date}</Text>
+                    </View>
+                    <View style={styles.footerCard}>
+                      <Text style={styles.textName}>{item.name}</Text>
+                      <Icon
+                        name="chevron-right"
+                        type="font-awesome5"
+                        reverseColor={Colors.second}
+                        size={30}
+                      />
+                    </View>
+                  </Card>
+                    </TouchableOpacity>
+              
+                </View>
+              )}
               keyExtractor={(item) => item.id}
             />
           </View>

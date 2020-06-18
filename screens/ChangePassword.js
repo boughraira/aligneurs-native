@@ -37,17 +37,17 @@ const ChangePassword = ({ navigation: { goBack } }) => {
           <View style={styles.inputsButtons}>
             <View style={styles.cardsContainer}>
               <Card style={styles.cards}>
-                <TextInput placeholder="Enter current password" />
+                <TextInput placeholder="Enter current password" placeholderTextColor="#7a7a7a" />
               </Card>
             </View>
             <View style={styles.cardsContainer}>
               <Card style={styles.cards}>
-                <TextInput placeholder="Enter new password" />
+                <TextInput placeholder="Enter new password" placeholderTextColor="#7a7a7a" />
               </Card>
             </View>
             <View style={styles.cardsContainer}>
               <Card style={styles.cards}>
-                <TextInput placeholder="Confirm new password" />
+                <TextInput placeholder="Confirm new password" placeholderTextColor="#7a7a7a"/>
               </Card>
             </View>
             <View style={styles.cardsContainer}>

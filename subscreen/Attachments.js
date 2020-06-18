@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
+import { Text, View, TouchableOpacity, StyleSheet,Image } from "react-native";
 import Card from "../UI/Card";
 import Colors from "../constants/Colors";
 import { Icon } from "react-native-elements";
@@ -15,12 +15,7 @@ const Attachements = ({ navigation: { navigate } }) => {
           <Card style={styles.cards}>
             <View style={styles.titleContainer}>
               <View style={styles.iconContainer}>
-                <Icon
-                  name="credit-card"
-                  type="font-awesome"
-                  reverseColor={Colors.second}
-                  size={20}
-                />
+              <Image style={styles.image} source={require('../Photos/radiography.png')} />
               </View>
               <Text style={styles.textTitle}>Radiography</Text>
             </View>
@@ -38,12 +33,7 @@ const Attachements = ({ navigation: { navigate } }) => {
         <Card style={styles.cards}>
           <View style={styles.titleContainer}>
             <View style={styles.iconContainer}>
-              <Icon
-                name="camera"
-                type="font-awesome"
-                reverseColor={Colors.second}
-                size={20}
-              />
+            <Image style={styles.image} source={require('../Photos/photographs.png')} />
             </View>
             <Text style={styles.textTitle}>Photoghraphs</Text>
           </View>
@@ -60,12 +50,7 @@ const Attachements = ({ navigation: { navigate } }) => {
         <Card style={styles.cards}>
           <View style={styles.titleContainer}>
             <View style={styles.iconContainer}>
-              <Icon
-                name="paste"
-                type="font-awesome"
-                reverseColor={Colors.second}
-                size={20}
-              />
+            <Image style={styles.image} source={require('../Photos/prescription.png')} />
             </View>
             <Text style={styles.textTitle}>Prescription</Text>
           </View>
@@ -91,12 +76,13 @@ const styles = StyleSheet.create({
     paddingVertical: RFValue(10),
   },
   cards: {
-    width: 175 * 2,
+    width: "95%",
     height: 75,
     paddingHorizontal: RFValue(15),
     paddingVertical: RFValue(20),
     flexDirection: "row",
     justifyContent: "space-between",
+    alignSelf:"center",
   },
   titleContainer: {
     flexDirection: "row",
@@ -110,13 +96,14 @@ const styles = StyleSheet.create({
     fontFamily:'Poppins-SemiBold'
   },
   iconContainer: {
-    width: 40,
-    height: 40,
-    borderRadius: 40 / 2,
-    backgroundColor: "#dbdbdb",
+    width: 42,
+    height: 42,
+    borderRadius: 42 / 2,
+    backgroundColor: "#ebeef1",
     justifyContent: "center",
     alignItems: "center",
   },
+ 
 });
 
 export default Attachements;

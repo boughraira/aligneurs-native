@@ -8,7 +8,6 @@ import { Icon, colors } from "react-native-elements";
 import Colors from "../constants/Colors";
 import { RFValue } from "react-native-responsive-fontsize";
 
-
 import patients from "../data/PatientsData";
 
 const Tab = createMaterialTopTabNavigator();
@@ -19,7 +18,7 @@ const ProfileScreen = ({ navigation: { goBack, navigate } }) => {
       <View style={{ backgroundColor: "white" }}>
         <View style={styles.header}>
           <TouchableOpacity onPress={() => goBack()}>
-          <Icon
+            <Icon
               name="arrow-back"
               type="material"
               reverseColor={Colors.second}
@@ -27,13 +26,26 @@ const ProfileScreen = ({ navigation: { goBack, navigate } }) => {
             />
           </TouchableOpacity>
           <View style={styles.subHeader}>
-            <Image
-              style={styles.image}
-              source={patients[2].image}
-            />
+            <Image style={styles.image} source={patients[2].image} />
             <View style={{ paddingTop: 20, alignItems: "center" }}>
-              <Text style={{ fontSize: 18, fontFamily:'Poppins-SemiBold' }}>{patients[0].name}</Text>
-              <Text style={{ color: Colors.second, fontSize: 15 }}>
+              <Text
+                style={{
+                  fontSize: 18,
+                  fontFamily: "Poppins-SemiBold",
+                  fontWeight: "600",
+                  color: "#232323",
+                }}
+              >
+                {patients[0].name}
+              </Text>
+              <Text
+                style={{
+                  color: Colors.second,
+                  fontSize: 16,
+                  fontFamily: "Poppins",
+                  fontWeight: "400",
+                }}
+              >
                 {patients[0].add}
               </Text>
             </View>
@@ -42,48 +54,59 @@ const ProfileScreen = ({ navigation: { goBack, navigate } }) => {
               <View style={{ paddingHorizontal: RFValue(10) }}>
                 <TouchableOpacity onPress={() => navigate("StartCase")}>
                   <View style={styles.button}>
-                    <Text style={{ color: "white" }}>Start the case</Text>
+                    <Text
+                      style={{
+                        fontFamily: "Poppins-SemiBold",
+                       color:'#ffffff',
+                        fontSize: 14,
+                        fontWeight: "600",
+                      }}
+                    >
+                      Start the case
+                    </Text>
                   </View>
                 </TouchableOpacity>
               </View>
               <TouchableOpacity onPress={() => navigate("Chat")}>
-              <View style={styles.message}>
-                <Icon
-                  name="comment"
-                  type="font-awesome"
-                  color={Colors.primary}
-                  size={20}
-                />
-              </View>
+                <View style={styles.message}>
+                  <Icon
+                    name="comment"
+                    type="font-awesome"
+                    color={Colors.primary}
+                    size={20}
+                  />
+                </View>
               </TouchableOpacity>
             </View>
           </View>
         </View>
       </View>
-      <Tab.Navigator>
+      <Tab.Navigator
+        tabBarOptions={{
+          labelStyle: {
+            fontSize: 13,
+            fontFamily: "Poppins-Medium",
+            fontWeight: "700",
+          },
+          indicatorStyle:{borderColor:Colors.primary,borderBottomWidth:2},
+          activeTintColor: "#232323",
+          inactiveTintColor: '#d2d2d2',
+        }}
+      >
         <Tab.Screen
           name="Profile"
           component={Profile}
           options={{ tabBarLabel: "Profile" }}
-          tabBarOptions={{
-            labelStyle: { fontSize: 15 },
-          }}
         />
         <Tab.Screen
           name="Attachements"
           component={Attachements}
           options={{ tabBarLabel: "Attachements" }}
-          tabBarOptions={{
-            labelStyle: { fontSize: 15},
-          }}
         />
         <Tab.Screen
           name="Treatment"
           component={Treatment}
           options={{ tabBarLabel: "Treatment" }}
-          tabBarOptions={{
-            labelStyle: { fontSize: 15 },
-          }}
         />
       </Tab.Navigator>
     </>
@@ -114,9 +137,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   button: {
-    height: 40,
-    width: 140,
-    borderRadius: 140 / 4,
+    height: 43,
+    width: 137,
+    borderRadius: 137 / 4,
     alignItems: "center",
     justifyContent: "center",
 

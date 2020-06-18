@@ -18,11 +18,25 @@ const Settings = ({ navigation: { navigate } }) => {
         <Text style={styles.textHeader}>Settings</Text>
         <View style={styles.icons}>
           <View style={{ paddingHorizontal: 15 }}>
-          <TouchableOpacity onPress={() => navigate("Notifications")}>
+            <TouchableOpacity onPress={() => navigate("Notifications")}>
+              <View style={styles.iconView}>
+                <Icon
+                  name="notifications"
+                  type="ionicons"
+                  reverseColor={Colors.second}
+                  size={20}
+                />
+                <View style={styles.badgeStyle}>
+                  <Text style={styles.badgeText}>2</Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <TouchableOpacity onPress={() => navigate("Conversation")}>
             <View style={styles.iconView}>
               <Icon
-                name="notifications"
-                type="ionicons"
+                name="comment"
+                type="font-awesome"
                 reverseColor={Colors.second}
                 size={20}
               />
@@ -30,41 +44,20 @@ const Settings = ({ navigation: { navigate } }) => {
                 <Text style={styles.badgeText}>2</Text>
               </View>
             </View>
-            </TouchableOpacity>
-          </View>
-          <TouchableOpacity onPress={() => navigate("Conversation")}>
-          <View style={styles.iconView}>
-            <Icon
-              name="comment"
-              type="font-awesome"
-              reverseColor={Colors.second}
-              size={20}
-            />
-            <View style={styles.badgeStyle}>
-              <Text style={styles.badgeText}>2</Text>
-            </View>
-          </View>
           </TouchableOpacity>
-
         </View>
       </View>
       <View style={styles.userDetails}>
         <ScrollView>
           <View style={styles.headerContainer}>
             <View style={{ paddingBottom: 20 }}>
-              <Text style={styles.textStyling}>First Name</Text>
+              <Text style={styles.textStyling}>Name</Text>
               <View style={styles.footerContainer}>
-                <Text style={styles.info}>{users.firstName}</Text>
+                <Text style={styles.info}>{users.name}</Text>
                 <Text style={styles.textStyling}>Edit</Text>
               </View>
             </View>
-            <View style={{ paddingBottom: 20 }}>
-              <Text style={styles.textStyling}>Last Name</Text>
-              <View style={styles.footerContainer}>
-                <Text style={styles.info}>{users.lastName}</Text>
-                <Text style={styles.textStyling}>Edit</Text>
-              </View>
-            </View>
+
             <View style={{ paddingBottom: 20 }}>
               <Text style={styles.textStyling}>Phone</Text>
               <View style={styles.footerContainer}>

@@ -94,6 +94,7 @@ const LoginScreen = ({ navigation: { navigate } }) => {
                 errorText="Please enter a valid email address."
                 onInputChange={inputChangeHandler}
                 initialValue=""
+                placeholderStyle={{ fontFamily: "Poppins-Medium", fontSize:16, }}
               />
               <Input
                 id="password"
@@ -106,6 +107,7 @@ const LoginScreen = ({ navigation: { navigate } }) => {
                 errorText="Please enter a valid password."
                 onInputChange={inputChangeHandler}
                 initialValue=""
+                placeholderStyle={{ fontFamily: "Poppins-Medium", fontSize:16 }}
               />
             </View>
             <View style={styles.buttonContainer}>
@@ -145,7 +147,7 @@ const styles = StyleSheet.create({
     maxWidth: 400,
     padding: RFValue(20),
     maxHeight: 400,
-    paddingTop: RFValue(150),
+    paddingTop: RFValue(100),
   },
   buttonContainer: {
     height: 60,
@@ -155,7 +157,8 @@ const styles = StyleSheet.create({
   },
   textButton: {
     color: "white",
-    fontSize: 15,
+    fontSize: 18,
+    fontFamily:'Poppins-Medium'
   },
   button: {
     justifyContent: "center",
@@ -170,7 +173,9 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 17,
     paddingHorizontal: 50,
-    fontFamily:'Poppins'
+    fontFamily:'Poppins-Medium',
+    fontWeight:'600',
+    color:'#232323'
   },
   intro: {
     flex: 1,
@@ -189,10 +194,10 @@ const styles = StyleSheet.create({
     fontFamily:'Poppins-Bold'
   },
   subTitle: {
-    fontSize: 20,
+    fontSize: 18,
     //paddingTop: 10,
-    fontFamily:'Poppins',
-    color:"#555555"
+    fontFamily:'Poppins-SemiBold',
+    color:"#575757"
   },
 });
 

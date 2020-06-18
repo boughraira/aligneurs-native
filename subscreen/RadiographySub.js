@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity,Image } from "react-native";
 import Colors from "../constants/Colors";
 import { Icon } from "react-native-elements";
 import { RFValue } from "react-native-responsive-fontsize";
@@ -22,14 +22,10 @@ const RadiographySub = ({ navigation: { navigate, goBack } }) => {
       </View>
       <View style={styles.uploadButton}>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={() => navigate('Radiography')}>
+          <TouchableOpacity onPress={() => navigate('Radiography')} activeOpacity={0.8}>
             <View style={styles.button}>
-              <Icon
-                name="credit-card"
-                type="font-awesome"
-                reverseColor={Colors.second}
-                size={90}
-              />
+              <Image source={require('../Photos/uploadRadiographie.png')}/>
+             
             </View>
           </TouchableOpacity>
           <View style={styles.titleContainer}>
@@ -66,6 +62,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    
   },
   buttonContainer: {
     flexDirection: "column",
@@ -89,9 +86,10 @@ const styles = StyleSheet.create({
     elevation: 10,
   },
   textStyle: {
-    fontSize: 15,
+    fontSize: 16,
     paddingHorizontal: RFValue(10),
-    fontFamily:'Poppins-SemiBold'
+    fontFamily:'Poppins-SemiBold',
+    fontWeight:'600'
   },
   titleContainer: {
     flexDirection: "row",
